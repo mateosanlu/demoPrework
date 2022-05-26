@@ -1,0 +1,33 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-3">COGNOX BANK</h1>
+      <p class="col-lg-10 fs-4">Es el momento de tener el control de su dinero.   En Cognox Bank ofrecemos cuentas para cada etapa de la vida: abra una y acérquese a sus metas.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" class="js-validation-signin px-30" action="" method="post">
+        <input type="hidden" value="1" name="enviar" />
+
+        <?php if(isset($this->_error)): ?>
+          <div id="error" class="alert alert-danger" role="alert"><?php echo $this->_error; ?></div>
+        <?php endif; ?>
+
+        <?php if(isset($this->_mensaje)): ?>
+          <div id="mensaje" class="alert alert-success" role="alert"><?php echo $this->_mensaje; ?></div>
+        <?php endif; ?>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" placeholder="1234567890" id="login-username" name="login-username" value="<?php if(isset($this->datos)) echo $this->datos['login-username']; ?>" maxlength="10">
+          <label for="login-username">Identificaci&oacute;n</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control numeric" placeholder="Password" id="login-password" name="login-password" maxlength="4" pattern="[0-9]*" inputmode="numeric">
+          <label for="login-password">Contraseña</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesi&oacute;n</button>
+        <hr class="my-4">
+        <small class="text-muted"><?php echo APP_COMPANY; ?> &copy; 2022</small>
+      </form>
+    </div>
+  </div>
+</div>
